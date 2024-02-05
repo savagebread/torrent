@@ -15,8 +15,8 @@ import (
 	"golang.org/x/time/rate"
 
 	"github.com/anacrolix/torrent"
+	"github.com/anacrolix/torrent/internal/testutil"
 	"github.com/anacrolix/torrent/storage"
-	"github.com/savagebread/torrent/internal/testutil"
 )
 
 type LeecherStorageTestCase struct {

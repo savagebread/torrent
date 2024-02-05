@@ -10,8 +10,8 @@ import (
 	qt "github.com/frankban/quicktest"
 	"github.com/stretchr/testify/require"
 
+	"github.com/anacrolix/torrent/internal/testutil"
 	"github.com/anacrolix/torrent/storage"
-	"github.com/savagebread/torrent/internal/testutil"
 )
 
 func TestBoltPieceCompletionClosedWhenClientClosed(t *testing.T) {

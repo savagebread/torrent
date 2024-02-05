@@ -37,6 +37,8 @@ import (
 	"github.com/pion/datachannel"
 
 	"github.com/anacrolix/torrent/bencode"
+	"github.com/anacrolix/torrent/internal/check"
+	"github.com/anacrolix/torrent/internal/limiter"
 	"github.com/anacrolix/torrent/iplist"
 	"github.com/anacrolix/torrent/metainfo"
 	"github.com/anacrolix/torrent/mse"
@@ -47,8 +49,6 @@ import (
 	"github.com/anacrolix/torrent/tracker"
 	"github.com/anacrolix/torrent/types/infohash"
 	"github.com/anacrolix/torrent/webtorrent"
-	"github.com/savagebread/torrent/internal/check"
-	"github.com/savagebread/torrent/internal/limiter"
 )
 
 // Clients contain zero or more Torrents. A Client manages a blocklist, the
@@ -394,9 +394,9 @@ func (cl *Client) listenNetworks() (ns []network) {
 func (cl *Client) NewAnacrolixDhtServer(conn net.PacketConn) (s *dht.Server, err error) {
 	logger := cl.logger.WithNames("dht", conn.LocalAddr().String())
 	cfg := dht.ServerConfig{
-		IPBlocklist:    cl.ipBlockList,
-		Conn:           conn,
-		OnAnnouncePeer: cl.onDHTAnnouncePeer,
+		IPBlocklist: cl.ipBlockList,
+		Conn:        conn,
+		//OnAnnouncePeer: cl.onDHTAnnouncePeer,
 		PublicIP: func() net.IP {
 			if connIsIpv6(conn) && cl.config.PublicIp6 != nil {
 				return cl.config.PublicIp6

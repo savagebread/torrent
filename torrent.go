@@ -36,6 +36,8 @@ import (
 
 	"github.com/anacrolix/torrent/bencode"
 	"github.com/anacrolix/torrent/common"
+	"github.com/anacrolix/torrent/internal/check"
+	"github.com/anacrolix/torrent/internal/nestedmaps"
 	"github.com/anacrolix/torrent/metainfo"
 	pp "github.com/anacrolix/torrent/peer_protocol"
 	utHolepunch "github.com/anacrolix/torrent/peer_protocol/ut-holepunch"
@@ -46,8 +48,6 @@ import (
 	typedRoaring "github.com/anacrolix/torrent/typed-roaring"
 	"github.com/anacrolix/torrent/webseed"
 	"github.com/anacrolix/torrent/webtorrent"
-	"github.com/savagebread/torrent/internal/check"
-	"github.com/savagebread/torrent/internal/nestedmaps"
 )
 
 // Maintains state of torrent within a Client. Many methods should not be called before the info is
