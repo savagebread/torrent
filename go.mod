@@ -1,4 +1,4 @@
-module github.com/anacrolix/torrent
+module github.com/savagebread/torrent
 
 go 1.20
 
@@ -21,6 +21,7 @@ require (
 	github.com/anacrolix/squirrel v0.6.0
 	github.com/anacrolix/sync v0.5.1
 	github.com/anacrolix/tagflag v1.3.0
+	github.com/anacrolix/torrent v1.53.3
 	github.com/anacrolix/upnp v0.1.3-0.20220123035249-922794e51c96
 	github.com/anacrolix/utp v0.1.0
 	github.com/bahlo/generic-list-go v0.2.0

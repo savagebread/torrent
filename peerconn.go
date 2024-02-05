@@ -25,11 +25,11 @@ import (
 	"golang.org/x/time/rate"
 
 	"github.com/anacrolix/torrent/bencode"
-	"github.com/anacrolix/torrent/internal/alloclim"
 	"github.com/anacrolix/torrent/metainfo"
 	"github.com/anacrolix/torrent/mse"
 	pp "github.com/anacrolix/torrent/peer_protocol"
 	utHolepunch "github.com/anacrolix/torrent/peer_protocol/ut-holepunch"
+	"github.com/savagebread/torrent/internal/alloclim"
 )
 
 // Maintains the state of a BitTorrent-protocol based connection with a peer.
