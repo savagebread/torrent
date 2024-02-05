@@ -10,12 +10,12 @@ import (
 	"github.com/anacrolix/torrent/tracker"
 )
 
-type scrapeCfg struct {
+type ScrapeCfg struct {
 	Tracker    string             `arg:"positional"`
 	InfoHashes []torrent.InfoHash `arity:"+" arg:"positional"`
 }
 
-func scrape(flags scrapeCfg) error {
+func Scrape(flags ScrapeCfg) error {
 	cc, err := tracker.NewClient(flags.Tracker, tracker.NewClientOpts{})
 	if err != nil {
 		err = fmt.Errorf("creating new tracker client: %w", err)

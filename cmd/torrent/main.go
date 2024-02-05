@@ -68,11 +68,11 @@ func main() {
 			return cmd
 		}()},
 		bargle.Subcommand{Name: "scrape", Command: func() bargle.Command {
-			var scrapeCfg scrapeCfg
+			var scrapeCfg ScrapeCfg
 			cmd := bargle.FromStruct(&scrapeCfg)
 			cmd.Desc = "fetch swarm metrics for info-hashes from tracker"
 			cmd.DefaultAction = func() error {
-				return scrape(scrapeCfg)
+				return Scrape(scrapeCfg)
 			}
 			return cmd
 		}()},
